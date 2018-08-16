@@ -19,7 +19,9 @@ In this activity, we were asked to create an Amazon-like storefront with the MyS
    * This means updating the SQL database to reflect the remaining quantity.
    * Once the update goes through, show the customer the total cost of their purchase.
 
-![Game Page](./Customer_View.webm)
+![Video Demo](./Customer_View.webm)
+     OR
+[Demo of Customer View](https://drive.google.com/file/d/1Q5hQ3ry6T5qhZsdn8iv_kejkxEMOCiKr/view)
 
 ### Challenge #2: Manager View
 
@@ -31,7 +33,9 @@ In this activity, we were asked to create an Amazon-like storefront with the MyS
 
   * If a manager selects `Add New Product`, it should allow the manager to add a completely new product to the store.
 
-![Game Page](./Manager_View.webm)
+![Video Demo](./Manager_View.webm)
+     OR
+[Demo of Manager View](https://drive.google.com/file/d/1yi_WWogXru4m76WCcq3TkrLFgwyZs3Wb/view)
 
 ### Challenge #3: Supervisor View
 
@@ -42,4 +46,6 @@ In this activity, we were asked to create an Amazon-like storefront with the MyS
 | 01            | Electronics     | 10000           | 20000         | 10000        |
 | 02            | Clothing        | 60000           | 100000        | 40000        |
 
-![Game Page](./Supervisor_View.webm)
+![Video Demo](./Supervisor_View.webm)
+     OR
+[Demo of Supervisor View](https://drive.google.com/file/d/1XvgrQ2PX3xM5FAHMQvfWon_pyfRwo3-m/view)

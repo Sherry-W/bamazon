@@ -4,12 +4,21 @@ CREATE DATABASE bamazon_db;
 
 USE bamazon_db;
 
--- The products table should have each of the following columns:
---    * item_id (unique id for each product)
---    * product_name (Name of product)
---    * department_name
---    * price (cost to customer)
---    * stock_quantity (how much of the product is available in stores)
+CREATE TABLE departments (
+  department_id INT NOT NULL AUTO_INCREMENT,
+  department_name VARCHAR(255) NOT NULL,
+  over_head_costs DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (department_id)
+);
+
+INSERT INTO departments (department_name, over_head_costs)
+VALUES 
+    ("Electronics", 10000), 
+    ("Home & Kitchen", 5000), 
+    ("Sports & Outdoors", 2000), 
+    ("Video Games", 10000),
+    ("Books", 5000);
+
 
 CREATE TABLE products (
   item_id INT NOT NULL AUTO_INCREMENT,
@@ -34,20 +43,9 @@ VALUES
     ("NetAngler Fishing Lures Kit Bass Baits", "Sports & Outdoors", 3, 19.99, 18), 
     ("Berrypro 3-Piece Spinning Rod", "Sports & Outdoors", 3, 57.99, 5), 
     ("Pokemon: Let's Go, Pikachu! (Nintendo Switch)", "Video Games", 4, 59.99, 500), 
-    ("Super Mario Party! (Nintendo Switch)", "Video Games", 4, 59.99, 50);
+    ("Super Mario Party! (Nintendo Switch)", "Video Games", 4, 59.99, 50),
+    ("LG 32MA70HY-P 32-Inch Full HD IPS Monitor", "Electronics", 1, 199.99, 5),
+    ("Callaway Men's Strata Tour Complete Golf Set (18-Piece)", "Sports & Outdoors", 3, 474.86, 16),
+    ("Algorithms by Robert Sedgewick", "Books", 5, 80.00, 22);
 
 
-CREATE TABLE departments (
-  department_id INT NOT NULL AUTO_INCREMENT,
-  department_name VARCHAR(255) NOT NULL,
-  over_head_costs DECIMAL(10,2) NOT NULL,
-  total_profit DECIMAL(10,2) NULL,
-  PRIMARY KEY (department_id)
-);
-
-INSERT INTO departments (department_name, over_head_costs)
-VALUES 
-    ("Electronics", 10000), 
-    ("Home & Kitchen", 5000), 
-    ("Sports & Outdoors", 1000), 
-    ("Video Games", 2000);

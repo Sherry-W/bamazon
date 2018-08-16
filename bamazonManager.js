@@ -146,7 +146,7 @@ function menuOption() {
                                                 stock_quantity: data.quantity
                                             },
                                             function(err, res) {
-                                                console.log("\n" + res.affectedRows + " product added!\n");
+                                                console.log("\n" + res.affectedRows + " new product added!\n");
                                         });
                                     }
                                     connection.end();

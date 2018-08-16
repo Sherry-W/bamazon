@@ -98,22 +98,27 @@ function menuOption() {
                     });
                     
                 } else if (data.menu == "Add New Product") {
-                    connection.query("SELECT * FROM products", function(err, products) {
+                    connection.query("SELECT department_name FROM departments", function(err, departments) {
                         if (err) {
                             throw err;
                         }else {
-                            console.log (products);
-
+                            var depart_names = []
+                            // console.log (departments[0].department_name);
+                            for (var i = 0; i < departments.length; i++) {
+                                var depart_name = departments[i].department_name;
+                                depart_names.push(depart_name);
+                            }
                             inquirer.prompt([
                                 {
                                     type: "input",
                                     name: "product_name",
-                                    message: "Please enter the name  of the product you are adding:"
+                                    message: "Please enter the name of the product you are adding:"
                                 },
                                 {
-                                    type: "input",
+                                    type: "list",
                                     name: "department_name",
-                                    message: "Department:"
+                                    message: "Department:",
+                                    choices: depart_names
                                 },
                                 {
                                     type: "input",
@@ -125,14 +130,18 @@ function menuOption() {
                                     name: "quantity",
                                     message: "Quantity:"
                                 }
+                            
                             ]).then(function(data) {
                                     if (err) {
                                         throw err;
                                     }else {
+                                        var departID = parseInt(depart_names.indexOf(data.department_name)) + 1;
+                                        // console.log (departID);
                                         connection.query(
                                             "INSERT products SET ?", {
                                                 product_name: data.product_name,
                                                 department_name: data.department_name,
+                                                p_department_id: departID,
                                                 price: data.price,
                                                 stock_quantity: data.quantity
                                             },

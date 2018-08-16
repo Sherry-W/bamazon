@@ -64,7 +64,7 @@ function displayItem() {
                                     product_sales: sales
                                 },
                                 function(err, res) {
-                                    console.log(res.affectedRows + " product quantity updated!\n");
+                                    console.log("\n" + res.affectedRows + " product quantity updated!\n");
                             });
                             console.log("\nYour Total is: $" + total + ".\n");
                         }

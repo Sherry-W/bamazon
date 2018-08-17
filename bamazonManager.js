@@ -1,5 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+const cTable = require('console.table');
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -44,7 +45,7 @@ function menuOption() {
                         if (err) {
                             throw err;
                         }else {
-                            console.log (products);
+                            console.table(products);
                         }
                         connection.end();
                     })
@@ -53,7 +54,7 @@ function menuOption() {
                         if (err) {
                             throw err;
                         }else {
-                            console.log (products);
+                            console.table(products);
                         }
                         connection.end();
                     })
@@ -62,7 +63,7 @@ function menuOption() {
                         if (err) {
                             throw err;
                         }else {
-                            console.log (products);
+                            console.table(products);
 
                             inquirer.prompt([
                                 {
